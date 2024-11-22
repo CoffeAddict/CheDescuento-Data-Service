@@ -4,7 +4,9 @@
   "description": "Fetches discount data from specified sources.",
   "type": "module",
   "main": "api/fetchData.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node api/fetchData.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CoffeAddict/CheDescuento-Data-Service.git"
