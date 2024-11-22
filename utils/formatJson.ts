@@ -1,12 +1,11 @@
-import logMessage from "./logHandler.js";
 
 /**
  *
  * Formats JSON data to prevent errors
- * @param {*} json - JSON data to format
- * @return {*} JSON data formatted
+ * @param {MagicLoopData} json
+ * @return {*}  {MagicLoopData} JSON data formatted
  */
-function formatJSON(json) {
+export function formatJSON(json: MagicLoopDataRaw) {
     const mappedDiscounts = json?.discounts?.map((discount) => {
         return {
             shopName: discount.shop_name || null,
@@ -14,7 +13,7 @@ function formatJSON(json) {
             days: discount.days || [],
             bankTags: filterBankTags(discount.bank_tags || []),
             tags: filterTags(discount.tags || []),
-            details: discount.details.toLowerCase() || null,
+            details: discount.details?.toLowerCase() || null,
         }
     }) || [];
 
@@ -26,12 +25,12 @@ function formatJSON(json) {
     return mappedJson;
 }
 
-function filterBankTags(bankTags) {
-    return bankTags.filter((tag) => ![].includes(tag));
+function filterBankTags(bankTags: string[]) {
+    const filterList: string[] = []
+    return bankTags.filter((tag) => !filterList.includes(tag));
 }
 
-function filterTags(tags) {
-    return tags.filter((tag) => ![].includes(tag));
+function filterTags(tags: string[]) {
+    const filterList: string[] = []
+    return tags.filter((tag) => !filterList.includes(tag));
 }
-
-export default formatJSON;

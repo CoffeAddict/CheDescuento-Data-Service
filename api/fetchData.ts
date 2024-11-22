@@ -1,13 +1,13 @@
-import logMessage from '../utils/logHandler.js';
-import APIService from '../services/service.js';
-import writeToFile from '../utils/fileUtils.js';
-import formatJSON from '../utils/formatJson.js';
+import { APIService } from '../services/service';
+import { writeToFile } from '../utils/fileUtils';
+import { formatJSON } from '../utils/formatJson';
+import { logMessage } from '../utils/logMessage';
 
 // TODO: change from serverless funciton to normal function, remove response handler, it does not have to respond anything
 
 export default async function fetchData() {
     try {
-        !process.env.API_URL ?? logMessage('API_URL is not set in .env file', 'error');
+        if (!process.env.API_URL) { logMessage('API_URL is not set in .env file', 'error'); return }
 
         const service = new APIService(process.env.API_URL);
 
@@ -16,7 +16,7 @@ export default async function fetchData() {
 
         await writeToFile(formatJSON(COTOJson), COTOJsonVersion);
     } catch (error) {
-        logMessage(`Error fetching data from API: ${error.message}`, 'error');
+        logMessage(error, 'error')
     }
 }
 
