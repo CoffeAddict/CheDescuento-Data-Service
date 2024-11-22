@@ -31,7 +31,7 @@ jobs:
       run: pwd
 
     - name: Debug Permissions
-      run: ls -ld public
+      run: ls
 
     - name: Commit and Push Changes
       run: |
