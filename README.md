@@ -6,6 +6,7 @@ This repository contains a serverless function deployed on Vercel. The function 
 This project is automatically deployed to Vercel. Any changes pushed to the main branch will trigger a redeployment.
 
 
+
 ## Usage
 
 #### API Endpoint
