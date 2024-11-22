@@ -25,11 +25,14 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Build Project
+      run: npm run build
+
     - name: Generate/Update JSON
       env:
           API_URL: ${{ secrets.API_URL }}
           API_LOOP_COTO_ID: ${{ secrets.API_LOOP_COTO_ID }}
-      run: node api/fetchData.js
+      run: node dist/chedescuento-data-service.cjs
 
     - name: Commit and Push Changes
       run: |
