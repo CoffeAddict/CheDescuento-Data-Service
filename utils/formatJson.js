@@ -1,3 +1,5 @@
+import logMessage from "./logHandler.js";
+
 /**
  *
  * Formats JSON data to prevent errors
@@ -5,8 +7,7 @@
  * @return {*} JSON data formatted
  */
 function formatJSON(json) {
-
-    const mappedDiscounts = json.message?.discounts?.map((discount) => {
+    const mappedDiscounts = json?.discounts?.map((discount) => {
         return {
             shopName: discount.shop_name || null,
             discountAmount: discount.discount_amount || null,
@@ -18,7 +19,7 @@ function formatJSON(json) {
     }) || [];
 
     const mappedJson = {
-        version: json.message.version || null,
+        version: json?.version || null,
         discounts: mappedDiscounts,
     }
 
