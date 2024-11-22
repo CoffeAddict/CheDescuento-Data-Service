@@ -56,10 +56,11 @@
         "mastercard"
       ],
       "tags": [
-        "prepaga",
-        "credito"
+        "credito",
+        "prepago",
+        "uala"
       ],
-      "details": "ahorrando con tu tarjeta prepaga y crédito mastercard. exclusivo para usuarios con caja de ahorro a través de la app ualá."
+      "details": "ahorro pagando con tu tarjeta prepaga y crédito mastercard. exclusivo para usuarios con caja de ahorro a través de la app ualá. tope de reintegro: $10.000 tarjeta de crédito, $8.000 prepaga."
     },
     {
       "shopName": "coto",
@@ -84,8 +85,7 @@
       ],
       "bankTags": [],
       "tags": [
-        "socios",
-        "club la nación"
+        "club la nacion"
       ],
       "details": "descuento para socios club la nacion."
     },
@@ -99,10 +99,9 @@
         "bna"
       ],
       "tags": [
-        "visa",
-        "mastercard"
+        "credito"
       ],
-      "details": "descuento + 3 cuotas sin interés con tarjetas de crédito visa y mastercard del bna a través de la app. tope de reintegro unificado: $10.000 por día miércoles por cliente."
+      "details": "+ 3 cuotas sin interés con tarjetas de crédito visa y mastercard del bna a través de la app. tope de reintegro unificado: $10.000 por día miércoles por cliente."
     },
     {
       "shopName": "coto",
@@ -112,10 +111,10 @@
       ],
       "bankTags": [],
       "tags": [
-        "debito",
-        "credito"
+        "credito",
+        "debito"
       ],
-      "details": "ahorrando con tarjetas de crédito y débito. tope por cuenta por mes: $8.000."
+      "details": "ahorro con tarjetas de crédito y débito. tope por cuenta por mes: $8.000."
     },
     {
       "shopName": "coto",
@@ -125,12 +124,12 @@
       ],
       "bankTags": [],
       "tags": [
-        "identité",
-        "sueldo",
+        "credito",
         "debito",
-        "credito"
+        "identité",
+        "sueldo"
       ],
-      "details": "para clientes identité y plan sueldo con tarjetas de crédito y débito. tope cuenta sueldo y cartera identité por cuenta por mes: $15.000."
+      "details": "ahorro para clientes identité y plan sueldo con tarjetas de crédito y débito. tope cuenta sueldo y cartera identité por cuenta por mes: $15.000."
     },
     {
       "shopName": "coto",
@@ -142,11 +141,10 @@
         "galicia"
       ],
       "tags": [
-        "modo",
-        "visa",
-        "mastercard"
+        "debito",
+        "credito"
       ],
-      "details": "pagando con modo desde la app galicia, con tarjeta visa y mastercard galicia. tope de reintegro: $10.000 en total por semana entre todas las marcas adheridas a esta promoción."
+      "details": "ahorro pagando con modo desde la app galicia, con tarjeta visa y mastercard galicia. tope de reintegro: $10.000 en total por semana entre todas las marcas adheridas a esta promoción."
     },
     {
       "shopName": "coto",
@@ -159,7 +157,7 @@
       "tags": [
         "ciudadania porteña"
       ],
-      "details": "programa ciudadanía porteña. sin tope de reintegro."
+      "details": "descuento programa ciudadanía porteña. sin tope de reintegro."
     },
     {
       "shopName": "coto",
@@ -187,7 +185,7 @@
       "tags": [
         "debito"
       ],
-      "details": "ahorrando con tarjetas de débito visa. tope de reintegro: $5.000."
+      "details": "ahorro con tarjetas de débito visa. tope de reintegro: $5.000."
     },
     {
       "shopName": "coto",
@@ -230,7 +228,7 @@
       "tags": [
         "debito"
       ],
-      "details": "con tarjeta visa débito. tope de devolución: $10.000 por transacción. clientes cuenta comafi único tope de reintegro $12.000."
+      "details": "descuento con tarjeta visa débito. tope de devolución: $10.000 p/ transacción. clientes cuenta comafi único tope de reintegro $12.000."
     },
     {
       "shopName": "coto",
@@ -242,10 +240,9 @@
         "visa"
       ],
       "tags": [
-        "debito",
-        "jubilados"
+        "debito"
       ],
-      "details": "con tarjetas de débito visa. exclusivo jubilados que perciban sus haberes en el banco. tope de reintegro $20.000 mensual."
+      "details": "descuento con tarjetas de débito visa. exclusivo jubilados que perciban sus haberes en el banco. tope de reintegro $20.000 mensual."
     },
     {
       "shopName": "coto",
@@ -254,21 +251,24 @@
         "viernes"
       ],
       "bankTags": [],
-      "tags": [],
-      "details": "sin tope de reintegro utilizando todos los medios de pago dentro de la app."
+      "tags": [
+        "app"
+      ],
+      "details": "descuento sin tope de reintegro utilizando todos los medios de pago dentro de la app. sin tope de reintegro."
     },
     {
       "shopName": "coto",
       "discountAmount": "15%",
       "days": [
+        "viernes",
         "sábado",
         "domingo"
       ],
-      "bankTags": [
+      "bankTags": [],
+      "tags": [
         "credito"
       ],
-      "tags": [],
-      "details": "en un pago con tarjetas de crédito. sin tope de reintegro."
+      "details": "descuento en un pago con tarjetas de crédito. sin tope de reintegro."
     },
     {
       "shopName": "coto",
@@ -278,8 +278,10 @@
         "domingo"
       ],
       "bankTags": [],
-      "tags": [],
-      "details": "sin tope de reintegro utilizando todos los medios de pago dentro de la app."
+      "tags": [
+        "app"
+      ],
+      "details": "descuento sin tope de reintegro utilizando todos los medios de pago dentro de la app. sin tope de reintegro."
     },
     {
       "shopName": "coto",
@@ -294,7 +296,7 @@
       "tags": [
         "credito"
       ],
-      "details": "con tarjetas de crédito icbc visa y icbc mastercard. sin tope de reintegro."
+      "details": "descuento con tarjetas de crédito icbc visa y icbc mastercard. sin tope de reintegro."
     },
     {
       "shopName": "coto",
@@ -305,7 +307,9 @@
       "bankTags": [
         "naranja"
       ],
-      "tags": [],
+      "tags": [
+        "cuotas"
+      ],
       "details": "3 cuotas sin interés con tarjeta naranja."
     },
     {
@@ -313,7 +317,6 @@
       "discountAmount": "15%",
       "days": [
         "viernes",
-        "sábado",
         "domingo"
       ],
       "bankTags": [
@@ -322,7 +325,7 @@
       "tags": [
         "credito"
       ],
-      "details": "en un pago con nuestra tarjeta de crédito tci. sin tope de reintegro."
+      "details": "descuento en un pago con nuestra tarjeta de crédito tci. sin tope de reintegro."
     }
   ]
 }
