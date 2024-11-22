@@ -1,5 +1,5 @@
 # CheDescuento Data Service
-This repository contains a serverless function deployed on Vercel. The function performs Fetches discount data from specified sources and saves it to a JSON file.
+This repository contains a serverless function deployed on Vercel. The function performs fetches discount data from specified sources and saves it to a JSON file.
 
 ### Deployment
 
@@ -10,14 +10,11 @@ This project is automatically deployed to Vercel. Any changes pushed to the main
 
 #### API Endpoint
 
-The function is accessible at:
 ```
 https://<your-vercel-project-name>.vercel.app/api/fetchData
 ```
 
 #### Environment Variables
-
-The following environment variables are required to run the function:
 
 | Variable Name | Description | Default |
 | --- | --- | --- |
