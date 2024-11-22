@@ -1,0 +1,35 @@
+# name: Update JSON File and Deploy
+
+# on:
+#   schedule:
+#     - cron: '0 0 * * *' # Runs every day at midnight (UTC)
+#   workflow_dispatch: # Allows manual triggering
+
+# jobs:
+#   update-json:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout Code
+#       uses: actions/checkout@v3
+
+#     - name: Set Up Node.js
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: 20
+
+#     - name: Install Dependencies
+#       run: npm install
+
+#     - name: Generate/Update JSON
+#       run: node scripts/update-json.js
+
+#     - name: Commit and Push Changes
+#       run: |
+#         git config --local user.name "GitHub Actions"
+#         git config --local user.email "actions@github.com"
+#         git add mocks/data.json
+#         git commit -m "Update JSON file [skip ci]"
+#         git push
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

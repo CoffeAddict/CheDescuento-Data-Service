@@ -1,0 +1,20 @@
+{
+  "name": "chedescuento-data-service",
+  "version": "0.1.0",
+  "description": "Fetches discount data from specified sources.",
+  "main": "api/fetchData.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoffeAddict/CheDescuento-Data-Service.git"
+  },
+  "author": "Andres Rodriguez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CoffeAddict/CheDescuento-Data-Service/issues"
+  },
+  "homepage": "https://github.com/CoffeAddict/CheDescuento-Data-Service#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

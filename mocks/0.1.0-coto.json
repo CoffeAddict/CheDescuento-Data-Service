@@ -1,0 +1,312 @@
+{
+    "message": {
+        "version": "0.1.0-coto",
+        "discounts": [
+            {
+                "shop_name": "coto",
+                "discount_amount": "15%",
+                "days": [
+                    "lunes",
+                    "jueves"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "jubilados",
+                    "pensionados",
+                    "dni"
+                ],
+                "details": "en un pago para todos los JUBILADOS Y PENSIONADOS presentando dni. Con todos los medios de pago. No válido para venta online."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "20%",
+                "days": [
+                    "lunes"
+                ],
+                "bank_tags": [
+                    "tci"
+                ],
+                "tags": [
+                    "credito"
+                ],
+                "details": "en un pago con nuestra tarjeta de crédito tci."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "25%",
+                "days": [
+                    "lunes"
+                ],
+                "bank_tags": [
+                    "visa",
+                    "mastercard",
+                    "cabal"
+                ],
+                "tags": [
+                    "credito"
+                ],
+                "details": "en un pago con tarjetas de crédito Visa, Mastercard y Cabal. Reembolso máximo $10.000 semanal por cliente."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "25%",
+                "days": [
+                    "lunes"
+                ],
+                "bank_tags": [
+                    "mastercard"
+                ],
+                "tags": [
+                    "credito",
+                    "prepago",
+                    "uala"
+                ],
+                "details": "ahorro pagando con tu tarjeta prepaga y crédito mastercard. EXCLUSIVO PARA USUARIOS CON CAJA DE AHORRO A TRAVÉS DE LA APP UALÁ. Tope de reintegro: $10.000 tarjeta de crédito, $8.000 prepaga."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "15%",
+                "days": [
+                    "martes",
+                    "miércoles",
+                    "jueves"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "comunidad"
+                ],
+                "details": "en un pago si sos miembro DE NUESTRA COMUNIDAD. Sin tope de reintegro. No válido para venta online."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "15%",
+                "days": [
+                    "lunes",
+                    "miércoles"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "club la nacion",
+                    "socios"
+                ],
+                "details": "descuento para socios Club La Nacion."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "30%",
+                "days": [
+                    "miércoles"
+                ],
+                "bank_tags": [
+                    "bna",
+                    "visa",
+                    "mastercard"
+                ],
+                "tags": [
+                    "cuotas sin interés"
+                ],
+                "details": "descuento \"+ 3 cuotas sin interés\" con tarjetas de crédito visa y mastercard del bna a través de la app. Tope de reintegro unificado: $10.000 por día Miércoles por cliente."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "20%",
+                "days": [
+                    "martes"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "credito",
+                    "debito"
+                ],
+                "details": "ahorro con tarjetas de crédito y débito. Tope por cuenta por mes: $8.000."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "25%",
+                "days": [
+                    "martes"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "credito",
+                    "debito",
+                    "identité"
+                ],
+                "details": "ahorro para clientes Identité y plan sueldo con tarjetas de crédito y débito. Tope cuenta sueldo y cartera Identité por cuenta por mes: $15.000."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "25%",
+                "days": [
+                    "miércoles"
+                ],
+                "bank_tags": [
+                    "galicia",
+                    "visa",
+                    "mastercard"
+                ],
+                "tags": [
+                    "modo",
+                    "credito",
+                    "debito"
+                ],
+                "details": "ahorro pagando con modo desde la app galicia, con tarjeta visa y mastercard galicia. Tope de reintegro: $10.000 en total por semana entre todas las marcas adheridas a esta promoción."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "10%",
+                "days": [
+                    "lunes",
+                    "miércoles"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "ciudadania porteña"
+                ],
+                "details": "descuento programa ciudadanía porteña. Sin tope de reintegro."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "10%",
+                "days": [
+                    "lunes",
+                    "jueves"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "debito",
+                    "credito"
+                ],
+                "details": "en un pago con tarjetas de débito y crédito. Sin tope de reintegro."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "20%",
+                "days": [
+                    "jueves"
+                ],
+                "bank_tags": [
+                    "visa"
+                ],
+                "tags": [
+                    "debito"
+                ],
+                "details": "ahorro con tarjetas DE DÉBITO VISA. Tope de reintegro: $5.000."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "20%",
+                "days": [
+                    "jueves"
+                ],
+                "bank_tags": [
+                    "visa"
+                ],
+                "tags": [
+                    "debito"
+                ],
+                "details": "descuento con tarjetas DE DÉBITO VISA. Tope de reintegro: $8.000 mensual."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "20%",
+                "days": [
+                    "jueves"
+                ],
+                "bank_tags": [
+                    "visa",
+                    "mastercard"
+                ],
+                "tags": [
+                    "credito"
+                ],
+                "details": "descuento en un pago con tarjetas DE crédito VISA y mastercard. Tope de reintegro: $18.000 mensual."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "25%",
+                "days": [
+                    "jueves"
+                ],
+                "bank_tags": [
+                    "visa"
+                ],
+                "tags": [
+                    "debito",
+                    "comafi"
+                ],
+                "details": "descuento con tarjeta VISA débito. Tope de devolución: $10.000 p/ transacción. Clientes Cuenta Comafi Único tope de reintegro $12.000."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "20%",
+                "days": [
+                    "jueves"
+                ],
+                "bank_tags": [
+                    "visa"
+                ],
+                "tags": [
+                    "debito",
+                    "jubilados"
+                ],
+                "details": "descuento con tarjetas de débito VISA. EXCLUSIVO JUBILADOS QUE PERCIBAN SUS HABERES EN EL BANCO. Tope de reintegro $20.000 mensual."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "25%",
+                "days": [
+                    "viernes"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "todos los medios de pago",
+                    "app"
+                ],
+                "details": "descuento SIN TOPE DE REINTEGRO utilizando todos los medios de pago dentro de la app."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "15%",
+                "days": [
+                    "viernes",
+                    "domingo"
+                ],
+                "bank_tags": [],
+                "tags": [
+                    "credito"
+                ],
+                "details": "en un pago con tarjetas de CRÉDITO. Sin tope de reintegro. No valido para venta online (Coto Digital)."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "3 cuotas sin interés",
+                "days": [
+                    "todos los días"
+                ],
+                "bank_tags": [
+                    "tarjeta naranja"
+                ],
+                "tags": [
+                    "cuotas"
+                ],
+                "details": "con tarjeta naranja."
+            },
+            {
+                "shop_name": "coto",
+                "discount_amount": "15%",
+                "days": [
+                    "viernes",
+                    "domingo"
+                ],
+                "bank_tags": [
+                    "tci"
+                ],
+                "tags": [
+                    "credito"
+                ],
+                "details": "descuento en un pago con nuestra tarjeta de crédito tci. Sin tope de reintegro."
+            }
+        ]
+    }
+}
