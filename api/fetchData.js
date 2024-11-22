@@ -7,10 +7,7 @@ import formatJSON from '../utils/formatJson.js';
 
 export default async function fetchData() {
     try {
-        if (!process.env.API_URL) {
-            logMessage('API_URL is not set in .env file', 'error');
-            return;
-        }
+        !process.env.API_URL ?? logMessage('API_URL is not set in .env file', 'error');
 
         const service = new APIService(process.env.API_URL);
 

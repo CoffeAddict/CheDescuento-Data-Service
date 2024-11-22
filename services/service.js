@@ -33,7 +33,8 @@ class APIService {
         try {
             const response = await fetch(url, config);
 
-            if (!response.ok) logMessage(`${response.statusText}`, 'error');
+            !response.ok ?? logMessage(`${response.statusText}`, 'error')
+
             const data = await response.json();
 
             return data;
