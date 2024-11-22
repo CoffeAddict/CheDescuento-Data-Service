@@ -2,6 +2,7 @@
   "name": "chedescuento-data-service",
   "version": "0.1.0",
   "description": "Fetches discount data from specified sources.",
+  "type": "module",
   "main": "api/fetchData.js",
   "scripts": {},
   "repository": {

@@ -1,6 +1,8 @@
-import handleResponse from '../utils/responseHandler';
-import logMessage from '../utils/logHandler';
-import APIService from '../services/service';
+import handleResponse from '../utils/responseHandler.js';
+import logMessage from '../utils/logHandler.js';
+import APIService from '../services/service.js';
+import writeToFile from '../utils/fileUtils.js';
+import formatJSON from '../utils/formatJson.js';
 
 export default async function handler(req, res) {
     try {
@@ -12,13 +14,12 @@ export default async function handler(req, res) {
 
         const service = new APIService(process.env.API_URL);
 
-        const COTOJson = await service.get(`/${process.env.API_LOOP_COTO_ID}/run`, '0.1.0-coto.json');
-        handleResponse(res, COTOJson);
+        const COTOJsonVersion = '0.1.0-coto.json'
+        const COTOJson = await service.get(`/${process.env.API_LOOP_COTO_ID}/run`, COTOJsonVersion);
 
-        // TODO: format data to prevent errors
-        // TODO: save data to file
+        await writeToFile(formatJSON(COTOJson), COTOJsonVersion);
 
-        // handleResponse(res, 'Data fetched and saved successfully.');
+        handleResponse(res, 'Data fetched and saved successfully.');
     } catch (error) {
         console.error('Error:', error);
         handleResponse(res, 'An error occurred', 500);

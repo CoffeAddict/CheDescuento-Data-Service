@@ -1,6 +1,7 @@
-import logMessage from '../utils/logHandler';
+import dotenv from 'dotenv';
+import logMessage from '../utils/logHandler.js';
 
-require('dotenv').config();
+dotenv.config();
 
 const useMocks = process.env.API_USE_MOCKS === 'true';
 const mocksUrl = process.env.API_MOCKS_URL || 'http://localhost:3000/mocks';
@@ -27,6 +28,8 @@ class APIService {
         const config = { ...this.defaultConfig };
         const url = useMocks ? `${mocksUrl}/${mockFile}` : `${this.baseUrl}${endpoint}`;
 
+        logMessage(`Fetching data from ${url}`);
+
         try {
             const response = await fetch(url, config);
 
@@ -35,7 +38,7 @@ class APIService {
 
             return data;
         } catch (error) {
-            logMessage('Fetch error', 'error');
+            logMessage(`Fetch error: ${error.message}`, 'error');
             throw error;
         }
     }

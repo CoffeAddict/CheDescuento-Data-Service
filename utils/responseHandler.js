@@ -10,4 +10,4 @@ function handleResponse(res, message, statusCode = 200) {
     });
 }
 
-module.exports = handleResponse;
+export default handleResponse;

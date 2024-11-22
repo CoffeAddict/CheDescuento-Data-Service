@@ -1,40 +1,38 @@
-# TODO: generate a workflow to update the JSON file and deploy the changes
+name: Update JSON Files and Commit
 
-# name: Update JSON File and Deploy
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight (UTC)
+  workflow_dispatch: # Allows manual triggering
 
-# on:
-#   schedule:
-#     - cron: '0 0 * * *' # Runs every day at midnight (UTC)
-#   workflow_dispatch: # Allows manual triggering
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
 
-# jobs:
-#   update-json:
-#     runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-#     steps:
-#     - name: Checkout Code
-#       uses: actions/checkout@v3
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
 
-#     - name: Set Up Node.js
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: 20
+    - name: Install Dependencies
+      run: npm install
 
-#     - name: Install Dependencies
-#       run: npm install
+    - name: Generate/Update JSON
+      env:
+          API_URL: ${{ secrets.API_URL }}
+          API_LOOP_COTO_ID: ${{ secrets.API_LOOP_COTO_ID }}
+      run: node api/fetchData.js
 
-#     - name: Generate/Update JSON
-#       env:
-#           API_KEY: ${{ secrets.API_KEY }}
-#           ENV_NAME: ${{ secrets.ENV_NAME }}
-#       run: node scripts/update-json.js
-
-#     - name: Commit and Push Changes
-#       run: |
-#         git config --local user.name "GitHub Actions"
-#         git config --local user.email "actions@github.com"
-#         git add mocks/data.json
-#         git commit -m "Update JSON file [skip ci]"
-#         git push
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
+        git add public/*
+        git commit -m "Updated JSON files [skip ci]"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

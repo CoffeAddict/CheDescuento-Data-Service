@@ -6,18 +6,15 @@
 function logMessage(message, level = 'log') {
     const logLevels = ['log', 'warn', 'error'];
 
-    if (!logLevels.includes(level)) {
-        console.log(`Invalid log level. Defaulting to 'log'`);
-        level = 'log'; // default to 'log' if invalid level is provided
-    }
+    if (!logLevels.includes(level)) level = 'log'; // default to 'log' if invalid level is provided
 
     console[level](`${logTypes[level]}: ${message}`);
 }
 
 const logTypes = {
     log: 'INFO',
-    info: 'INFO',
-    warn: 'WARN'
+    warn: 'WARN',
+    error: 'ERROR',
 }
 
-module.exports = logMessage;
+export default logMessage;
