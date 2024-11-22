@@ -56,13 +56,13 @@
         "mastercard"
       ],
       "tags": [
-        "prepagada",
+        "prepaga",
         "credito"
       ],
       "details": "ahorro pagando con tu tarjeta prepaga y crédito mastercard. exclusivo para usuarios con caja de ahorro a través de la app ualá. tope de reintegro: $10.000 tarjeta de crédito, $8.000 prepaga."
     },
     {
-      "shopName": "coto",
+      "shopName": "cato",
       "discountAmount": "15%",
       "days": [
         "martes",
@@ -79,11 +79,12 @@
       "shopName": "coto",
       "discountAmount": "15%",
       "days": [
+        "lunes",
         "miércoles"
       ],
       "bankTags": [],
       "tags": [
-        "club",
+        "club la nacion",
         "socios"
       ],
       "details": "descuento para socios club la nacion."
@@ -95,13 +96,12 @@
         "miércoles"
       ],
       "bankTags": [
-        "visa",
-        "mastercard",
         "bna"
       ],
       "tags": [
         "credito",
-        "cuotas"
+        "visa",
+        "mastercard"
       ],
       "details": "+ 3 cuotas sin interés con tarjetas de crédito visa y mastercard del bna a través de la app. tope de reintegro unificado: $10.000 por día miércoles por cliente."
     },
@@ -126,9 +126,9 @@
       ],
       "bankTags": [],
       "tags": [
-        "identité",
         "credito",
-        "debito"
+        "debito",
+        "identité"
       ],
       "details": "ahorro para clientes identité y plan sueldo con tarjetas de crédito y débito. tope cuenta sueldo y cartera identité por cuenta por mes: $15.000."
     },
@@ -142,10 +142,11 @@
         "galicia"
       ],
       "tags": [
-        "modo",
-        "credito"
+        "credito",
+        "visa",
+        "mastercard"
       ],
-      "details": "ahorro pagando con modo desde la app galicia, con tarjeta visa y mastercard galicia. tope de reintegro: $10.000 en total por semana entre todas las marcas adheridas a esta promoción."
+      "details": "pagando con modo desde la app galicia, con tarjeta visa y mastercard galicia. tope de reintegro: $10.000 en total por semana entre todas las marcas adheridas a esta promoción."
     },
     {
       "shopName": "coto",
@@ -156,10 +157,9 @@
       ],
       "bankTags": [],
       "tags": [
-        "ciudadania",
-        "porteña"
+        "ciudadania porteña"
       ],
-      "details": "descuento programa ciudadania porteña. sin tope de reintegro."
+      "details": "programa ciudadania porteña. sin tope de reintegro."
     },
     {
       "shopName": "coto",
@@ -170,10 +170,10 @@
       ],
       "bankTags": [],
       "tags": [
-        "debito",
-        "credito"
+        "credito",
+        "debito"
       ],
-      "details": "descuento en un pago con tarjetas de débito y crédito. sin tope de reintegro."
+      "details": "en un pago con tarjetas de débito y crédito. sin tope de reintegro."
     },
     {
       "shopName": "coto",
@@ -230,7 +230,7 @@
       "tags": [
         "debito"
       ],
-      "details": "descuento con tarjeta visa débito. tope de devolución: $10.000 p/ transacción. clientes cuenta comafi único tope de reintegro $12.000."
+      "details": "con tarjeta visa débito. tope de devolución: $10.000 p/ transacción. clientes cuenta comafi único tope de reintegro $12.000."
     },
     {
       "shopName": "coto",
@@ -242,8 +242,7 @@
         "visa"
       ],
       "tags": [
-        "debito",
-        "jubilados"
+        "debito"
       ],
       "details": "descuento con tarjetas de débito visa. exclusivo jubilados que perciban sus haberes en el banco. tope de reintegro $20.000 mensual."
     },
@@ -261,18 +260,17 @@
       "shopName": "coto",
       "discountAmount": "15%",
       "days": [
-        "viernes",
-        "domingo"
+        "del viernes 22/11 al domingo 24/11"
       ],
       "bankTags": [],
       "tags": [
         "credito"
       ],
-      "details": "descuento en un pago con tarjetas de crédito. sin tope de reintegro. no valido para venta online (coto digital)."
+      "details": "en un pago con tarjetas de crédito. sin tope de reintegro. no valido para venta online (coto digital)."
     },
     {
       "shopName": "coto",
-      "discountAmount": "3 CUOTAS SIN INTERÉS",
+      "discountAmount": "3 cuotas sin interés",
       "days": [
         "todos los días"
       ],
@@ -288,8 +286,7 @@
       "shopName": "coto",
       "discountAmount": "15%",
       "days": [
-        "viernes",
-        "domingo"
+        "de viernes a domingo"
       ],
       "bankTags": [
         "tci"
