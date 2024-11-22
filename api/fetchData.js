@@ -17,13 +17,11 @@ export default async function handler(req, res) {
         const COTOJsonVersion = '0.1.0-coto.json'
         const COTOJson = await service.get(`/${process.env.API_LOOP_COTO_ID}/run`, COTOJsonVersion);
 
-        console.error(COTOJson);
-
         await writeToFile(formatJSON(COTOJson), COTOJsonVersion);
 
         handleResponse(res, 'Data fetched and saved successfully.');
     } catch (error) {
-        console.error('Error:', error);
+        logMessage(`Error fetching data from API: ${error.message}`, 'error');
         handleResponse(res, 'An error occurred', 500);
     }
 }
