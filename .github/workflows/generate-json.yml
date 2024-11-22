@@ -8,10 +8,14 @@ on:
 jobs:
   update-json:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        persist-credentials: true
 
     - name: Set Up Node.js
       uses: actions/setup-node@v3
@@ -26,12 +30,6 @@ jobs:
           API_URL: ${{ secrets.API_URL }}
           API_LOOP_COTO_ID: ${{ secrets.API_LOOP_COTO_ID }}
       run: node api/fetchData.js
-
-    - name: Check Working Directory
-      run: pwd
-
-    - name: Debug Permissions
-      run: ls
 
     - name: Commit and Push Changes
       run: |
