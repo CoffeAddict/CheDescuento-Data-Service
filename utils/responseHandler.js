@@ -5,6 +5,8 @@
  * @param {number} statusCode - The HTTP status code to send (default is 200).
  */
 function handleResponse(res, message, statusCode = 200) {
+    if (!res) return
+
     res.status(statusCode).json({
       message: message,
     });

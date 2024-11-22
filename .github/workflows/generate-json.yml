@@ -27,11 +27,17 @@ jobs:
           API_LOOP_COTO_ID: ${{ secrets.API_LOOP_COTO_ID }}
       run: node api/fetchData.js
 
+    - name: Check Working Directory
+      run: pwd
+
+    - name: Debug Permissions
+      run: ls -ld public
+
     - name: Commit and Push Changes
       run: |
         git config --local user.name "GitHub Actions"
         git config --local user.email "actions@github.com"
-        git add public/*
+        git add public/
         git commit -m "Updated JSON files [skip ci]"
         git push
       env:

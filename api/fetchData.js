@@ -25,3 +25,5 @@ export default async function handler(req, res) {
         handleResponse(res, 'An error occurred', 500);
     }
 }
+
+handler();
