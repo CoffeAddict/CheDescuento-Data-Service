@@ -16,8 +16,6 @@ export async function scrapData (jobVersion: string) {
         ...config,
         spec: `cypress/e2e/scrap-jobs/${jobVersion}.cy.ts`,
     }).then((result) => {
-        console.log('result', result);
-
         const isSuccess = !isCypressFailedRunResult(result);
 
         isSuccess ? logMessage(`Scrap data successfully - ${jobVersion}`, 'log') : logMessage(result.message, 'error');
