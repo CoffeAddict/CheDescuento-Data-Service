@@ -29,9 +29,6 @@ jobs:
       run: npm run build
 
     - name: Generate/Update JSON
-      env:
-          API_URL: ${{ secrets.API_URL }}
-          API_LOOP_COTO_ID: ${{ secrets.API_LOOP_COTO_ID }}
       run: node dist/chedescuento-data-service.cjs
 
     - name: Commit and Push Changes
