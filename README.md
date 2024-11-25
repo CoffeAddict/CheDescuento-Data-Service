@@ -26,7 +26,6 @@ https://<your-vercel-project-name>.vercel.app/api/fetchData
 
 ## Development
 - Node.js v16 or higher
-- Vercel CLI
 
 ### Running Locally
 1.	Clone the repository:
@@ -49,7 +48,7 @@ API_LOOP_COTO_ID=loop-coto-id
 
 4.	Start the server:
 ```bash
-vercel dev
+npm run dev
 ```
 
 5.	Access the function at:

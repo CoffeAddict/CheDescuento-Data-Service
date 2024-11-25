@@ -2,8 +2,7 @@ import { APIService } from '../services/service';
 import { writeToFile } from '../utils/fileUtils';
 import { formatJSON } from '../utils/formatJson';
 import { logMessage } from '../utils/logMessage';
-
-// TODO: change from serverless funciton to normal function, remove response handler, it does not have to respond anything
+import { scrapData } from '../services/cypressService';
 
 export default async function fetchData() {
     try {
@@ -11,10 +10,14 @@ export default async function fetchData() {
 
         const service = new APIService(process.env.API_URL);
 
-        const COTOJsonVersion = '0.1.0-coto.json'
-        const COTOJson = await service.get(`/${process.env.API_LOOP_COTO_ID}/run`, COTOJsonVersion);
+        //  TODO remove magicloops workflow, replace with cypress
 
-        await writeToFile(formatJSON(COTOJson), COTOJsonVersion);
+        // const COTOJsonVersion = '0.0.1-coto.json'
+        // const COTOJson = await service.get(`/${process.env.API_LOOP_COTO_ID}/run`, COTOJsonVersion);
+        // await writeToFile(formatJSON(COTOJson), COTOJsonVersion);
+
+        await scrapData('0.0.1-coto')
+
     } catch (error) {
         logMessage(error, 'error')
     }

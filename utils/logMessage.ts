@@ -14,5 +14,5 @@ export function logMessage(message: string | unknown, level: keyof LogTypes = 'l
 
     if (!logLevels.includes(level)) level = 'log'; // default to 'log' if invalid level is provided
 
-    console[level](`${logTypes[level]}: ${message}`);
+    console[level](`${logTypes[level].toUpperCase()}: ${message}`);
 }
