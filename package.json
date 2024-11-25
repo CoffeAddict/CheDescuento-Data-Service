@@ -4,7 +4,7 @@
   "description": "Fetches discount data from specified sources.",
   "type": "module",
   "main": "api/fetchData",
-  "exports": "./dist/chedescuento-data-service.mjs",
+  "exports": "./dist/index.cjs",
   "scripts": {
     "dev": "tsx api/fetchData",
     "build": "node esbuild.config.cjs",
