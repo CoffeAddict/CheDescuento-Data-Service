@@ -4,10 +4,11 @@
   "description": "Fetches discount data from specified sources.",
   "type": "module",
   "main": "api/fetchData",
+  "exports": "./dist/chedescuento-data-service.mjs",
   "scripts": {
     "dev": "tsx api/fetchData",
-    "build": "vite build",
-    "start": "node dist/index.js"
+    "build": "node esbuild.config.cjs",
+    "start": "node dist/index.cjs"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,9 @@
   "devDependencies": {
     "@types/node": "^22.9.1",
     "cypress": "^13.16.0",
+    "esbuild": "^0.24.0",
+    "ts-loader": "^9.5.1",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.11"
+    "typescript": "^5.6.3"
   }
 }
