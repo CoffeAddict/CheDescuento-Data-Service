@@ -3,11 +3,19 @@ name: Update JSON Files and Commit
 on:
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight (UTC)
+  pull_request:
+      branches:
+        - serve-json
   workflow_dispatch: # Allows manual triggering
+
+defaults:
+    run:
+      working-directory: path-to-your-repo-on-specific-branch
 
 jobs:
   update-json:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/serve-json' # Ensures it only runs on the specified branch
     permissions:
       contents: write
 
