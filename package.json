@@ -2,13 +2,13 @@
   "name": "chedescuento-data-service",
   "version": "0.1.0",
   "description": "Fetches discount data from specified sources.",
-  "type": "module",
   "main": "api/fetchData",
-  "exports": "./dist/index.cjs",
+  "exports": "./dist/index.js",
   "scripts": {
-    "dev": "tsx api/fetchData",
-    "build": "node esbuild.config.cjs",
-    "start": "node dist/index.cjs"
+    "dev": "tsx api/fetchData --log-level=debug",
+    "build": "npx tsc",
+    "start": "node dist/api/fetchData.js",
+    "build:run": "npx tsc && node dist/api/fetchData.js"
   },
   "repository": {
     "type": "git",
@@ -21,13 +21,12 @@
   },
   "homepage": "https://github.com/CoffeAddict/CheDescuento-Data-Service#readme",
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "move-file": "^3.1.0"
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
+    "@types/cypress": "^1.1.6",
     "@types/node": "^22.9.1",
     "cypress": "^13.16.0",
-    "esbuild": "^0.24.0",
     "ts-loader": "^9.5.1",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
