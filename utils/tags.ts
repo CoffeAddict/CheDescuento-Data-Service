@@ -24,6 +24,7 @@ const tagsDictionary: TagDictionary = {
   pensionados: 'pension',
   santanderwomen: 'santander-women',
   tci: 'tci',
+  ualá: 'uala',
   uala: 'uala',
   visa: 'visa',
 };
