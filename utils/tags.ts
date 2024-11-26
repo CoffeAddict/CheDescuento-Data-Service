@@ -5,7 +5,8 @@ const tagsDictionary: TagDictionary = {
   'la nacion': 'la-nacion',
   'nuestra comunidad': 'comunity', // COTO
   'supervielle': 'supervielle',
-  'tarjeta de crédito': 'credit-card',
+  'tarjeta de crédito': 'credit',
+  'tarjeta de débito': 'debit',
   'tarjeta naranja': 'tarjeta-naranja',
   'todos los medios de pago': 'payment-all',
   amex: 'amex',
