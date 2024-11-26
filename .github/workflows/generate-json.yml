@@ -35,6 +35,7 @@ jobs:
       run: |
         git config --local user.name "GitHub Actions"
         git config --local user.email "actions@github.com"
+        git checkout -b serve-json
         git add public/
         git diff --cached --quiet || git commit -m "Updated JSON files [skip ci]"
         git push
