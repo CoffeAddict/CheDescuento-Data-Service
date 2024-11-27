@@ -33,20 +33,20 @@ const tagsDictionary: TagDictionary = {
  * Match dictionary words in a string.
  *
  * @export
- * @param {string} html
+ * @param {string} htmlString - HTML string to match dictionary words
  * @return {*}  {string[]}
  */
-export function matchDictionaryWords(html: string): string[] {
+export function matchDictionaryWords(htmlString: string): string[] {
     const matches: string[] = []
 
-    if (!html) return matches
+    if (!htmlString) return matches
 
-    html = html.toLowerCase().trim()
+    htmlString = htmlString.toLowerCase().trim()
 
     // Loop through the dictionary and check if the word exists in the text
     for (const [word, tag] of Object.entries(tagsDictionary)) {
         // Check if the word exists in the textContent (case-sensitive)
-        if (html.includes(word))matches.push(tag)
+        if (htmlString.includes(word) && !matches.includes(tag)) matches.push(tag)
     }
 
     return matches

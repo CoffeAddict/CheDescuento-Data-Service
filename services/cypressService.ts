@@ -25,6 +25,20 @@ export async function scrapData (jobVersion: string) {
     })
 }
 
+export async function buildVersion (version: string) {
+    await cypress.run({
+        ...config,
+        spec: `cypress/e2e/versions/${version}.cy.ts`,
+    }).then((result) => {
+        const isSuccess = !isCypressFailedRunResult(result)
+
+        if (isSuccess) logMessage(`Version built successfully - ${version}`, 'log')
+        if (!isSuccess) logMessage(result.message, 'error')
+
+        return isSuccess
+    })
+}
+
 // TypeGuard for CypressFailedRunResult
 function isCypressFailedRunResult(result: unknown): result is CypressFailedRunResult {
     return (result as CypressFailedRunResult).failures !== undefined
