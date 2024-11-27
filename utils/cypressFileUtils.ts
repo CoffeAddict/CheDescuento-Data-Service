@@ -1,5 +1,6 @@
 import path from 'path'
 import { logMessage } from './logMessage'
+import { scrapItem } from '../cypress/e2e/scrap-jobs/0.0.1-coto.cy'
 
 /**
  * Writes JSON data to a file using Cypress.writeFile
@@ -10,7 +11,7 @@ import { logMessage } from './logMessage'
  * @param {string} filename - Name of the file to write
  * @param {string} [directory='/public']
  */
-export async function cypressWriteToFile (cy: Cypress.cy & CyEventEmitter, data: string, filename: string, directory: string = '') {
+export async function cypressWriteToFile (cy: Cypress.cy & CyEventEmitter, data: scrapItem[], filename: string, directory: string = '') {
     try {
         const filePath = path.join(directory, `${filename}.json`)
         const dataString = JSON.stringify(data)

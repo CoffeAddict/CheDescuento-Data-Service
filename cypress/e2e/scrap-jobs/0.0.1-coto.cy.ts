@@ -99,7 +99,8 @@ enum weekDays {
     'day_6' = 'sunday',
 }
 
-interface scrapItem {
+// TODO generate a global scrapitem interface
+export interface scrapItem {
     discountAmount: string | null
     weekDays: weekDays[],
     tags: string[],
