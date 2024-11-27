@@ -3,9 +3,7 @@
 import { cypressWriteToFile } from '../../../utils/cypressFileUtils'
 import { matchDictionaryWords } from '../../../utils/tags'
 
-// TODO: add linter to project
-
-const scrapperVersion = '0.0.1-coto'
+const scrapperVersion = '0.0.2-coto'
 const sourceURL = 'https://www.coto.com.ar/descuentos/index.asp'
 
 describe('Web Scrapping with Cypress', () => {
@@ -23,6 +21,7 @@ describe('Web Scrapping with Cypress', () => {
                     discountAmount: getDiscountAmount($el),
                     weekDays: getWeekDays($el),
                     tags: getTags($el),
+                    detail: getDetail($el),
                 }
 
                 let skipItem: boolean = false
@@ -87,7 +86,38 @@ function getTags (el: JQuery<HTMLElement>): scrapItem['tags'] {
 
     const tags = matchDictionaryWords(elText)
 
-    return tags.filter((tag) => !skipTags.includes(tag))
+    return tags.filter((tag) => !skipTags.some(skipTag => tag.includes(skipTag)))
+}
+
+function getDetail (el: JQuery<HTMLElement>): scrapItem['detail'] {
+    const detailsEl = el.find('.alt-font.text-medium-gray.text-extra-small')
+
+    const detailHTML = detailsEl.html()
+
+    // Remove HTML tags using a regular expression
+    const cleanText = detailHTML.replace(/<[^>]*>/g, '');
+
+    // Add a space between sentences
+    let updatedString = cleanText.replace(/(\.)(?=[a-zA-Z])/g, '$1 ').trim().toLowerCase();
+
+    const skipPhrases: string[] = [
+        'ver legal.',
+    ]
+
+    // Filter phrases from the string
+    skipPhrases.forEach((phrase) => {
+        if (updatedString.includes(phrase)) updatedString = updatedString.replace(phrase, '')
+    })
+
+    const detailArray = updatedString
+        // Split the string by sentences
+        .split(/(?<=\.)\s/)
+        // Filter out empty sentences
+        .filter(phrase => phrase.length)
+        // Remove the last character of each sentence
+        .map(phrase => phrase.slice(0, -1));
+
+    return detailArray
 }
 
 enum weekDays {
@@ -97,11 +127,4 @@ enum weekDays {
     'day_4' = 'thursday',
     'day_5' = 'friday',
     'day_6' = 'sunday',
-}
-
-// TODO generate a global scrapitem interface
-export interface scrapItem {
-    discountAmount: string | null
-    weekDays: weekDays[],
-    tags: string[],
 }
