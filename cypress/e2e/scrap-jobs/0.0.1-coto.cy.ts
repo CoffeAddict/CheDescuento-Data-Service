@@ -12,7 +12,7 @@ describe('Web Scrapping with Cypress', () => {
   it('Scrapes discounts from source URL', () => {
     cy.visit(sourceURL);
 
-    let scrapData: scrapItem[] = [];
+    const scrapData: scrapItem[] = [];
 
     cy.get('#discounts .grid-item')
       .should('be.visible')
@@ -85,7 +85,7 @@ function getTags (el: JQuery<HTMLElement>): scrapItem['tags'] {
 
   const skipTags: scrapItem['tags'] = []
 
-  let tags = matchDictionaryWords(elText)
+  const tags = matchDictionaryWords(elText)
 
   return tags.filter((tag) => !skipTags.includes(tag))
 }

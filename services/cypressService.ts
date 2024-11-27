@@ -18,7 +18,8 @@ export async function scrapData (jobVersion: string) {
     }).then((result) => {
         const isSuccess = !isCypressFailedRunResult(result);
 
-        isSuccess ? logMessage(`Scrap data successfully - ${jobVersion}`, 'log') : logMessage(result.message, 'error');
+        if (isSuccess) logMessage(`Scrap data successfully - ${jobVersion}`, 'log');
+        if (!isSuccess) logMessage(result.message, 'error');
 
         return isSuccess
     });
