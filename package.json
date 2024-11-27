@@ -10,7 +10,8 @@
     "start": "node dist/api/fetchData.js",
     "build:run": "npx tsc && node dist/api/fetchData.js",
     "lint": "npx eslint . --fix",
-    "lint:watch": "npx eslint . --fix"
+    "lint:watch": "npx eslint . --fix",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
