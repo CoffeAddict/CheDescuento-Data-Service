@@ -1,6 +1,6 @@
-import { logMessage } from '../utils/logMessage';
-import { scrapData } from '../services/cypressService';
-import { moveToDirectory } from '../utils/fileUtils';
+import { logMessage } from '../utils/logMessage'
+import { scrapData } from '../services/cypressService'
+import { moveToDirectory } from '../utils/fileUtils'
 
 export default async function fetchData() {
     try {

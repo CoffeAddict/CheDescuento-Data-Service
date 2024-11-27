@@ -1,5 +1,5 @@
-import cypress from 'cypress';
-import { logMessage } from '../utils/logMessage';
+import cypress from 'cypress'
+import { logMessage } from '../utils/logMessage'
 
 const config = {
     headless: true,
@@ -16,16 +16,16 @@ export async function scrapData (jobVersion: string) {
         ...config,
         spec: `cypress/e2e/scrap-jobs/${jobVersion}.cy.ts`,
     }).then((result) => {
-        const isSuccess = !isCypressFailedRunResult(result);
+        const isSuccess = !isCypressFailedRunResult(result)
 
-        if (isSuccess) logMessage(`Scrap data successfully - ${jobVersion}`, 'log');
-        if (!isSuccess) logMessage(result.message, 'error');
+        if (isSuccess) logMessage(`Scrap data successfully - ${jobVersion}`, 'log')
+        if (!isSuccess) logMessage(result.message, 'error')
 
         return isSuccess
-    });
+    })
 }
 
 // TypeGuard for CypressFailedRunResult
 function isCypressFailedRunResult(result: unknown): result is CypressFailedRunResult {
-    return (result as CypressFailedRunResult).failures !== undefined;
+    return (result as CypressFailedRunResult).failures !== undefined
 }

@@ -1,44 +1,44 @@
 /// <reference types="cypress" />
 
-import { cypressWriteToFile } from "../../../utils/cypressFileUtils";
-import { matchDictionaryWords } from "../../../utils/tags";
+import { cypressWriteToFile } from '../../../utils/cypressFileUtils'
+import { matchDictionaryWords } from '../../../utils/tags'
 
 // TODO: add linter to project
 
 const scrapperVersion = '0.0.1-coto'
-const sourceURL = 'https://www.coto.com.ar/descuentos/index.asp';
+const sourceURL = 'https://www.coto.com.ar/descuentos/index.asp'
 
 describe('Web Scrapping with Cypress', () => {
-  it('Scrapes discounts from source URL', () => {
-    cy.visit(sourceURL);
+    it('Scrapes discounts from source URL', () => {
+        cy.visit(sourceURL)
 
-    const scrapData: scrapItem[] = [];
+        const scrapData: scrapItem[] = []
 
-    cy.get('#discounts .grid-item')
-      .should('be.visible')
-      .each((el) => {
-        const $el = Cypress.$(el); // Wrap with jQuery
+        cy.get('#discounts .grid-item')
+            .should('be.visible')
+            .each((el) => {
+                const $el = Cypress.$(el) // Wrap with jQuery
 
-        const scrapItem:scrapItem  = {
-          discountAmount: getDiscountAmount($el),
-          weekDays: getWeekDays($el),
-          tags: getTags($el),
-        }
+                const scrapItem:scrapItem  = {
+                    discountAmount: getDiscountAmount($el),
+                    weekDays: getWeekDays($el),
+                    tags: getTags($el),
+                }
 
-        let skipItem: boolean = false
+                let skipItem: boolean = false
 
-        const skipDiscounts: scrapItem['discountAmount'][] = [
-          'consultá aquí periódicamente los próximos descuentos del fin de semana.'
-        ]
+                const skipDiscounts: scrapItem['discountAmount'][] = [
+                    'consultá aquí periódicamente los próximos descuentos del fin de semana.',
+                ]
 
-        skipItem = skipDiscounts.includes(scrapItem.discountAmount)
+                skipItem = skipDiscounts.includes(scrapItem.discountAmount)
 
-        if (!skipItem) scrapData.push(scrapItem)
-    }).then(() => {
-        cypressWriteToFile(cy, scrapData, scrapperVersion)
-    });
-  });
-});
+                if (!skipItem) scrapData.push(scrapItem)
+            }).then(() => {
+                cypressWriteToFile(cy, scrapData, scrapperVersion)
+            })
+    })
+})
 
 /**
  * Get discount amount from element HTML
@@ -47,11 +47,11 @@ describe('Web Scrapping with Cypress', () => {
  * @return {*}  {scrapItem['discountAmount']}
  */
 function getDiscountAmount (el: JQuery<HTMLElement>): scrapItem['discountAmount'] {
-  let discountAmount = el.find('p:nth-child(2)').text() || null;
+    let discountAmount = el.find('p:nth-child(2)').text() || null
 
-  if (discountAmount) discountAmount = discountAmount.trim().toLowerCase()
+    if (discountAmount) discountAmount = discountAmount.trim().toLowerCase()
 
-  return discountAmount
+    return discountAmount
 }
 
 /**
@@ -61,17 +61,17 @@ function getDiscountAmount (el: JQuery<HTMLElement>): scrapItem['discountAmount'
  * @return {*}  {scrapItem['weekDays']}
  */
 function getWeekDays(el: JQuery<HTMLElement>): scrapItem['weekDays'] {
-  const classListString = el.attr('class') || '';
-  const classList = classListString.split(' ');
+    const classListString = el.attr('class') || ''
+    const classList = classListString.split(' ')
 
-  const weekDaysList: weekDays[] = []
+    const weekDaysList: weekDays[] = []
 
-  // Add days that correspond to the classes and match with weekDays
-  classList.forEach((className) => {
-    if (className.includes('day')) weekDaysList.push(weekDays[className as keyof typeof weekDays]);
-  })
+    // Add days that correspond to the classes and match with weekDays
+    classList.forEach((className) => {
+        if (className.includes('day')) weekDaysList.push(weekDays[className as keyof typeof weekDays])
+    })
 
-  return weekDaysList
+    return weekDaysList
 }
 
 /**
@@ -81,26 +81,26 @@ function getWeekDays(el: JQuery<HTMLElement>): scrapItem['weekDays'] {
  * @return {*}  {scrapItem['tags']}
  */
 function getTags (el: JQuery<HTMLElement>): scrapItem['tags'] {
-  const elText = el.html();
+    const elText = el.html()
 
-  const skipTags: scrapItem['tags'] = []
+    const skipTags: scrapItem['tags'] = []
 
-  const tags = matchDictionaryWords(elText)
+    const tags = matchDictionaryWords(elText)
 
-  return tags.filter((tag) => !skipTags.includes(tag))
+    return tags.filter((tag) => !skipTags.includes(tag))
 }
 
 enum weekDays {
-  'day_1' = 'monday',
-  'day_2' = 'tuesday',
-  'day_3' = 'wednesday',
-  'day_4' = 'thursday',
-  'day_5' = 'friday',
-  'day_6' = 'sunday',
+    'day_1' = 'monday',
+    'day_2' = 'tuesday',
+    'day_3' = 'wednesday',
+    'day_4' = 'thursday',
+    'day_5' = 'friday',
+    'day_6' = 'sunday',
 }
 
 interface scrapItem {
-  discountAmount: string | null
-  weekDays: weekDays[],
-  tags: string[],
+    discountAmount: string | null
+    weekDays: weekDays[],
+    tags: string[],
 }

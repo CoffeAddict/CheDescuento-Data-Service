@@ -1,8 +1,8 @@
 const logTypes: LogTypes = {
     log: 'log',
     warn: 'warn',
-    error: 'error'
-};
+    error: 'error',
+}
 
 /**
 * Log message handler with default console.log.
@@ -10,9 +10,9 @@ const logTypes: LogTypes = {
 * @param {LogTypes} type - The log type (e.g., 'INFO', 'WARN', 'ERROR'). Defaults to 'INFO'.
 */
 export function logMessage(message: string | unknown, level: keyof LogTypes = 'log') {
-    const logLevels = ['log', 'warn', 'error'];
+    const logLevels = ['log', 'warn', 'error']
 
-    if (!logLevels.includes(level)) level = 'log'; // default to 'log' if invalid level is provided
+    if (!logLevels.includes(level)) level = 'log' // default to 'log' if invalid level is provided
 
-    console[level](`${logTypes[level].toUpperCase()}: ${message}`);
+    console[level](`${logTypes[level].toUpperCase()}: ${message}`)
 }

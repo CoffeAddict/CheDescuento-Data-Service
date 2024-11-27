@@ -1,5 +1,5 @@
-import path from 'path';
-import { logMessage } from './logMessage';
+import path from 'path'
+import { logMessage } from './logMessage'
 
 /**
  * Writes JSON data to a file using Cypress.writeFile
@@ -11,12 +11,12 @@ import { logMessage } from './logMessage';
  * @param {string} [directory='/public']
  */
 export async function cypressWriteToFile (cy: Cypress.cy & CyEventEmitter, data: string, filename: string, directory: string = '') {
-  try {
-    const filePath = path.join(directory, `${filename}.json`);
-    const dataString = JSON.stringify(data);
+    try {
+        const filePath = path.join(directory, `${filename}.json`)
+        const dataString = JSON.stringify(data)
 
-    cy.writeFile(filePath, dataString);
-  } catch (error) {
-    logMessage(error, 'error');
-  }
+        cy.writeFile(filePath, dataString)
+    } catch (error) {
+        logMessage(error, 'error')
+    }
 };
