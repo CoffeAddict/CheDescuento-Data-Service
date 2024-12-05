@@ -18,21 +18,7 @@ export async function scrapData (jobVersion: string) {
     }).then((result) => {
         const isSuccess = !isCypressFailedRunResult(result)
 
-        if (isSuccess) logMessage(`Scrap data successfully - ${jobVersion}`, 'log')
-        if (!isSuccess) logMessage(result.message, 'error')
-
-        return isSuccess
-    })
-}
-
-export async function buildVersion (version: string) {
-    await cypress.run({
-        ...config,
-        spec: `cypress/e2e/versions/${version}.cy.ts`,
-    }).then((result) => {
-        const isSuccess = !isCypressFailedRunResult(result)
-
-        if (isSuccess) logMessage(`Version built successfully - ${version}`, 'log')
+        if (isSuccess) logMessage(`Scrapped data successfully - ${jobVersion}`, 'log')
         if (!isSuccess) logMessage(result.message, 'error')
 
         return isSuccess

@@ -5,7 +5,8 @@ interface ScrapService {
 }
 
 interface ScrapJob {
-    version: string
+    version: string,
+    client: string,
     timeCreated: string
     data: ScrapItem[]
 }

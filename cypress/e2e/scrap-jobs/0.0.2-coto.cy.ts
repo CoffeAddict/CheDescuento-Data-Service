@@ -1,9 +1,11 @@
 /// <reference types="cypress" />
 
 import { cypressWriteToFile } from '../../../utils/cypressFileUtils'
+import { logMessage } from '../../../utils/logMessage'
 import { matchDictionaryWords } from '../../../utils/tags'
 
 const scrapperVersion = '0.0.2-coto'
+const sourceClient = 'coto'
 const sourceURL = 'https://www.coto.com.ar/descuentos/index.asp'
 
 describe(`Web Scrapping with Cypress - ${scrapperVersion}`, () => {
@@ -34,7 +36,8 @@ describe(`Web Scrapping with Cypress - ${scrapperVersion}`, () => {
 
                 if (!skipItem) scrapData.push(ScrapItem)
             }).then(() => {
-                cypressWriteToFile(cy, scrapData, scrapperVersion)
+                cypressWriteToFile(cy, scrapData, scrapperVersion, sourceClient)
+                    .catch((error) => logMessage(error, 'error'))
             })
     })
 })
